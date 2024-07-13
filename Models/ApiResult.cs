@@ -1,6 +1,6 @@
 ﻿namespace SSSAssessment.Models
 {
-    public class ApiResponse
+    public class ApiResult
     {
         public List<Client> Results { get; set; }
         public Metadata Metadata { get; set; }
