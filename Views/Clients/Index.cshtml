@@ -1,0 +1,33 @@
+﻿@model IEnumerable<SSSAssessment.Models.Client>
+
+@{
+    ViewData["Title"] = "Client List";
+}
+
+<h2>Client List</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Avatar</th>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td><img src="@client.Avatar" alt="Avatar" width="50" height="50" /></td>
+                <td>@client.FirstName @client.LastName</td>
+                <td>@client.DateOfBirth.ToShortDateString()</td>
+                <td>@client.Email</td>
+                <td>@client.PhoneNumber</td>
+                <td><a class="btn btn-primary" href="/Clients/Details/@client.Id">More Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,30 @@
+﻿@model SSSAssessment.Models.Client
+
+@{
+    ViewData["Title"] = "Client Details";
+}
+
+<h2>Client Details</h2>
+<div>
+    <img src="@Model.Avatar" alt="Avatar" width="100" height="100" />
+    <h3>@Model.FirstName @Model.LastName</h3>
+    <p><strong>Date of Birth:</strong> @Model.DateOfBirth.ToShortDateString()</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Phone:</strong> @Model.PhoneNumber</p>
+    <p><strong>NINO:</strong> @Model.Nino</p>
+    <h4>Address</h4>
+    <p>
+        @Model.Address.AddressLine1<br />
+        @Model.Address.AddressLine2<br />
+        @Model.Address.AddressLine3<br />
+        @Model.Address.City, @Model.Address.PostCode<br />
+        @Model.Address.Country
+    </p>
+    <h4>Payment Details</h4>
+    <p>
+        <strong>Account Type:</strong> @Model.PaymentDetails.AccountType<br />
+        <strong>Account Name:</strong> @Model.PaymentDetails.AccountName<br />
+        <strong>Sort Code:</strong> @Model.PaymentDetails.SortCode<br />
+        <strong>Account Number:</strong> @Model.PaymentDetails.AccountNumber
+    </p>
+</div>
