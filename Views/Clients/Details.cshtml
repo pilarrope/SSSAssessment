@@ -11,7 +11,11 @@
     <p><strong>Date of Birth:</strong> @Model.DateOfBirth.ToShortDateString()</p>
     <p><strong>Email:</strong> @Model.Email</p>
     <p><strong>Phone:</strong> @Model.PhoneNumber</p>
-    <p><strong>NINO:</strong> @Model.Nino</p>
+    <p>
+        <strong>National Insurance Number:</strong>
+        @Html.Raw(Model.Nino.Replace(Model.Nino.Substring(1, Model.Nino.Length - 2), new string('*', Model.Nino.Length - 2)))
+    </p>
+
     <h4>Address</h4>
     <p>
         @Model.Address.AddressLine1<br />
@@ -21,10 +25,28 @@
         @Model.Address.Country
     </p>
     <h4>Payment Details</h4>
+
     <p>
-        <strong>Account Type:</strong> @Model.PaymentDetails.AccountType<br />
-        <strong>Account Name:</strong> @Model.PaymentDetails.AccountName<br />
-        <strong>Sort Code:</strong> @Model.PaymentDetails.SortCode<br />
-        <strong>Account Number:</strong> @Model.PaymentDetails.AccountNumber
+        <strong>Account Type:</strong>
+        @Html.Raw(Model.PaymentDetails.AccountType.Replace(Model.PaymentDetails.AccountType.Substring(1, Model.PaymentDetails.AccountType.Length - 2), new string('*', Model.PaymentDetails.AccountType.Length - 2)))
     </p>
+
+    <p>
+        <strong>Account Name:</strong>
+        @Html.Raw(Model.PaymentDetails.AccountName.Replace(Model.PaymentDetails.AccountName.Substring(1, Model.PaymentDetails.AccountName.Length - 2), new string('*', Model.PaymentDetails.AccountName.Length - 2)))
+    </p>
+
+    <p>
+        <strong>Sort Code:</strong>
+        @Html.Raw(Model.PaymentDetails.SortCode.Replace(Model.PaymentDetails.SortCode.Substring(1, Model.PaymentDetails.SortCode.Length - 2), new string('*', Model.PaymentDetails.SortCode.Length - 2)))
+    </p>
+
+    <p>
+        <strong>Account Number:</strong>
+        @Html.Raw(Model.PaymentDetails.AccountNumber.Replace(Model.PaymentDetails.AccountNumber.Substring(1, Model.PaymentDetails.AccountNumber.Length - 2), new string('*', Model.PaymentDetails.AccountNumber.Length - 2)))
+    </p>
+
+
 </div>
+
+
