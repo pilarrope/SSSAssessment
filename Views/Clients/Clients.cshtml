@@ -5,7 +5,7 @@
 }
 
 <h2>Client List</h2>
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Avatar</th>
@@ -13,19 +13,19 @@
             <th>Date of Birth</th>
             <th>Email</th>
             <th>Phone</th>
-            <th></th>
+            <th>Details Button </th>
         </tr>
     </thead>
     <tbody>
         @foreach (var client in Model)
         {
             <tr>
-                <td><img src="@client.Avatar" alt="Avatar" width="50" height="50" /></td>
+                <td><img src="@client.Avatar" alt="Avatar clients" width="50" height="50" /></td>
                 <td>@client.FirstName @client.LastName</td>
                 <td>@client.DateOfBirth.ToShortDateString()</td>
                 <td>@client.Email</td>
                 <td>@client.PhoneNumber</td>
-                <td><a class="btn btn-primary" asp-controller="Clients" asp-action="Details" asp-route-id="@client.Id">View Details</a></td>
+                <td><a class="btn buttonSSS" asp-controller="Clients" asp-action="Details" asp-route-id="@client.Id">View Details</a></td>
             </tr>
         }
     </tbody>
